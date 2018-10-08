@@ -1,33 +1,15 @@
-import React, { Component } from 'react';
-import { Header, Button } from 'semantic-ui-react';
-import axios from 'axios'
+import React from 'react';
+import CoinForm from '/CoinForm'
+import CoinList from '/CoinList'
 
-class Home extends Component {
-  state = {coin: {}}
 
-  clicky=() =>{
-    axios.post('/api/coins?coin=btc')
-    .then(res => {debugger})
-  }
+const Home = () => (
+  <>
+    <CoinForm />
+    <CoinList />
+  </>
+)
 
-  click2=() =>{
-    axios.post('/api/coins')
-    .then(res => {debugger})
-  }
-
-  render() {
-    return (
-      <>
-      <Button onClick={this.clicky}>
-        Click Me
-      </Button>
-      <Button onClick={this.clicky2}>
-       Coins
-      </Button>
-      </>
-    );
-  }
-}
 
 export default Home;
 
